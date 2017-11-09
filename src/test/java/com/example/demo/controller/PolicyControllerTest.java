@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -31,5 +32,6 @@ public class PolicyControllerTest {
         final int policyNumber = 5;
         given(policyService.getPolicy(policyNumber)).willReturn("arun");
         mvc.perform(get(PolicyController.URI, policyNumber).accept(MediaType.APPLICATION_JSON_UTF8)).andExpect(status().is2xxSuccessful()).andExpect(content().string("arun"));
+        verify(policyService).getPolicy(policyNumber);
     }
 }
