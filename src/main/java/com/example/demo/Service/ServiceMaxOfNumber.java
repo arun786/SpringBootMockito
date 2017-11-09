@@ -10,7 +10,7 @@ public class ServiceMaxOfNumber {
         this.dataService = dataService;
     }
 
-    public int findTheGreatestOfNumber() {
+    public int findGreatestOfNumber() {
         int greatest = Integer.MIN_VALUE;
         int[] numbers = dataService.retrieveAllData();
         for (int number : numbers) {

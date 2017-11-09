@@ -15,7 +15,7 @@ public class ServiceMaxOfNumberTest {
         DataService dataService = mock(DataService.class);
         when(dataService.retrieveAllData()).thenReturn(new int[]{10, 20, 30});
         ServiceMaxOfNumber smn = new ServiceMaxOfNumber(dataService);
-        int result = smn.findTheGreatestOfNumber();
+        int result = smn.findGreatestOfNumber();
         assertEquals(30, result);
 
     }
